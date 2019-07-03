@@ -1,0 +1,176 @@
+/******************************* 
+    Base Style
+*******************************/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* box-sizing is not inherited. This allows all elemnets to inherit the setting in the body styles */
+  box-sizing: inherit;
+}
+html {
+  /* This equals 10px, most defaul browser font size is 16px so 62.5% gives us 10px */
+  font-size: 62.5%;
+}
+body {
+  font-family: "Literata", serif;
+  /* border or padding no longer add to height or width of elements */
+  box-sizing: border-box;
+  transition: background 0.5s;
+  position: relative;
+}
+
+/******************************* 
+    Utility Style
+*******************************/
+.dark-overlay {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+/******************************* 
+    Header Style
+*******************************/
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2.2rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: rgb(248, 248, 248);
+  min-height: 10vh;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+nav .logo {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  width: 50%;
+}
+nav .nav-links li a {
+  text-decoration: none;
+  color: rgb(248, 248, 248);
+  position: relative;
+}
+nav .nav-links li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgb(248, 248, 248);
+  transform: scaleX(0);
+  transition: all 0.5s;
+  transform-origin: left;
+}
+nav .nav-links li a:hover::before {
+  transform: scaleX(1);
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  margin: 5px;
+  height: 3px;
+  background: rgb(248, 248, 248);
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    overflow-x: hidden;
+  }
+  nav {
+    width: 100vw;
+  }
+  .nav-links {
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    flex-direction: column;
+    height: 90vh;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    background: rgba(0, 0, 0, 0.8);
+    color: rgb(248, 248, 248);
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+  }
+}
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line-1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line-2 {
+  opacity: 0;
+}
+.toggle .line-3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/******************************* 
+    Showcase Style
+*******************************/
+#showcase--home {
+  background: url(img/showcase-bg.jpg) no-repeat center center;
+  height: 100vh;
+  width: 100%;
+}
+.showcase__content {
+  color: rgb(248, 248, 248);
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: background 0.5s;
+}
+.showcase__content-title {
+  font-size: 7rem;
+  font-weight: 600;
+}
+.showcase__content-text {
+  font-size: 2.6rem;
+  letter-spacing: 1.1;
+}
+/******************************* 
+    Gallery Style
+*******************************/
+#gallery--home {
+  position: relative;
+}
