@@ -24,10 +24,24 @@ body {
 /******************************* 
     Utility Style
 *******************************/
-.dark-overlay {
-  background: rgba(0, 0, 0, 0.8) !important;
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
-
+.divider {
+  border: 0;
+  height: 1px;
+  width: 60%;
+  margin: 0 auto;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}
 /******************************* 
     Header Style
 *******************************/
@@ -158,7 +172,6 @@ nav .nav-links li a:hover::before {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: background 0.5s;
 }
 .showcase__content-title {
   font-size: 7rem;
@@ -171,6 +184,37 @@ nav .nav-links li a:hover::before {
 /******************************* 
     Gallery Style
 *******************************/
-#gallery--home {
-  position: relative;
+.gallery {
+  display: flex;
+  padding: 3.5rem;
+  flex-basis: 60%;
+}
+.wide--img {
+  width: 100%;
+  height: auto;
+  min-height: 10rem;
+  padding: 1rem;
+}
+.tall--img {
+  padding: 1rem;
+  width: 100%;
+  height: auto;
+}
+.gallery__caption {
+  flex-basis: 30%;
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.gallery__caption--title {
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  padding: 1.2rem 1.5rem;
+}
+.gallery__caption--text {
+  font-size: 2.2rem;
+  text-align: center;
+  padding: 1.6rem 1.5rem;
 }
