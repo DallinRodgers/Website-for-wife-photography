@@ -42,6 +42,18 @@ body {
     rgba(0, 0, 0, 0)
   );
 }
+.down__arrow {
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  position: absolute;
+  bottom: 15rem;
+  transform: rotate(45deg);
+}
+.down__arrow:hover {
+  transform: scale(3) rotate(45deg);
+}
 /******************************* 
     Header Style
 *******************************/
@@ -158,6 +170,11 @@ nav .nav-links li a:hover::before {
 *******************************/
 #showcase--home {
   background: url(img/showcase-bg.jpg) no-repeat center center;
+  height: 100vh;
+  width: 100%;
+}
+#showcase--gallery {
+  background: url(img/gallery-showcase.jpg) no-repeat center center;
   height: 100vh;
   width: 100%;
 }
