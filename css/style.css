@@ -48,11 +48,21 @@ body {
   display: inline-block;
   padding: 3px;
   position: absolute;
-  bottom: 15rem;
+  bottom: 10rem;
   transform: rotate(45deg);
+  animation: arrowEffect 2s infinite;
+  z-index: 100;
 }
-.down__arrow:hover {
-  transform: scale(3) rotate(45deg);
+@keyframes arrowEffect {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+    transform: rotate(45deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(2) translateY(2.5rem) rotate(45deg);
+  }
 }
 /******************************* 
     Header Style
@@ -68,6 +78,7 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
+  z-index: 1000;
 }
 nav .logo {
   font-size: 3rem;
@@ -169,12 +180,12 @@ nav .nav-links li a:hover::before {
     Showcase Style
 *******************************/
 #showcase--home {
-  background: url(img/showcase-bg.jpg) no-repeat center center;
+  background: url(../img/showcase-bg.jpg) no-repeat center center;
   height: 100vh;
   width: 100%;
 }
 #showcase--gallery {
-  background: url(img/gallery-showcase.jpg) no-repeat center center;
+  background: url(../img/gallery-showcase.jpg) no-repeat center center;
   height: 100vh;
   width: 100%;
 }
@@ -189,6 +200,7 @@ nav .nav-links li a:hover::before {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 .showcase__content-title {
   font-size: 7rem;
@@ -205,7 +217,7 @@ nav .nav-links li a:hover::before {
 }
 @media screen and (max-width: 700px) {
   #showcase--home {
-    background: url(img/showcase-bg-sm.jpg) no-repeat center center;
+    background: url(../img/showcase-bg-sm.jpg) no-repeat center center;
   }
   .showcase__content-text {
     font-size: 2.2rem;
@@ -214,21 +226,29 @@ nav .nav-links li a:hover::before {
 /******************************* 
     Gallery Style
 *******************************/
-.gallery {
+.gallery__1 {
   display: flex;
   padding: 3.5rem;
   flex-basis: 60%;
 }
+.gallery__2 {
+  display: flex;
+  padding: 3.5rem 0;
+  flex-basis: 50%;
+}
 .wide--img {
   width: 100%;
+  max-width: 42rem;
   height: auto;
-  min-height: 10rem;
+  max-height: 27rem;
   padding: 1rem;
 }
 .tall--img {
   padding: 1rem;
   width: 100%;
+  max-width: 42rem;
   height: auto;
+  max-height: 60rem;
 }
 .gallery__caption {
   flex-basis: 40%;
@@ -236,12 +256,13 @@ nav .nav-links li a:hover::before {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 .gallery__caption--title {
   font-size: 4.5rem;
   text-transform: uppercase;
   padding: 1.2rem 0;
+  text-align: center;
 }
 .gallery__caption--text {
   font-size: 2.2rem;
