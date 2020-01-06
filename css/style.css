@@ -20,6 +20,10 @@ body {
   transition: background 0.5s;
   position: relative;
 }
+a {
+  text-decoration: none;
+  color: #fff;
+}
 
 /******************************* 
     Utility Style
@@ -52,16 +56,6 @@ body {
   transform: rotate(45deg);
   animation: arrowEffect 2s infinite;
   z-index: 100;
-}
-.dark {
-  color: #fff;
-  background: rgb(148, 81, 91);
-  background: linear-gradient(
-    0deg,
-    rgba(148, 81, 91, 1) 0%,
-    rgb(187, 120, 130) 45%,
-    rgb(255, 255, 255) 95%
-  );
 }
 @keyframes arrowEffect {
   from {
@@ -202,12 +196,6 @@ nav .nav-links li a:hover::before {
 #showcase--pricing {
   height: 50vh;
   width: 100%;
-  /* background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 13%,
-    rgba(255, 255, 255, 1) 100%
-  ); */
 }
 .showcase-bg-dark {
   background: rgba(0, 0, 0, 0.4);
@@ -321,7 +309,12 @@ nav .nav-links li a:hover::before {
   font-size: 1.4rem;
   text-align: right;
 }
-
+@media screen and (max-width: 1000px) {
+  .review__text {
+    width: 100%;
+    padding: 1.2rem 0;
+  }
+}
 /******************************* 
     Package Style
 *******************************/
@@ -376,6 +369,11 @@ nav .nav-links li a:hover::before {
   }
   .package__title {
     font-size: 3.5rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .package__title {
+    font-size: 2.5rem;
   }
 }
 /******************************* 
