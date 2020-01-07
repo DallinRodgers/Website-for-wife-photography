@@ -318,7 +318,7 @@ nav .nav-links li a:hover::before {
 /******************************* 
     Package Style
 *******************************/
-#main__pricing {
+/* #main__pricing {
   background: linear-gradient(
     180deg,
     rgb(109, 109, 109) 0%,
@@ -334,11 +334,14 @@ nav .nav-links li a:hover::before {
   width: 100%;
 }
 .package {
+  width: 100%;
+  padding: 0 10rem;
+}
+.package__body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
 }
 .package__text {
   width: 100%;
@@ -350,8 +353,6 @@ nav .nav-links li a:hover::before {
 }
 .package__details {
   list-style-type: none;
-  width: 80%;
-  margin: 0 auto;
 }
 .package__detail {
   font-size: 1.6rem;
@@ -375,7 +376,7 @@ nav .nav-links li a:hover::before {
   .package__title {
     font-size: 2.5rem;
   }
-}
+} */
 /******************************* 
     Footer Style
 *******************************/
